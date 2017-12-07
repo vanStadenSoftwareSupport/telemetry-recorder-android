@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/telemetryLib/telemetryLib.iml" filepath="$PROJECT_DIR$/telemetryLib/telemetryLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telemetryLib/telemetryLib.iml" filepath="$PROJECT_DIR$/telemetryLib/telemetryLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/telemetry_recorder.iml" filepath="$PROJECT_DIR$/telemetry_recorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telemetry_recorder_tester/telemetry_recorder_tester.iml" filepath="$PROJECT_DIR$/telemetry_recorder_tester/telemetry_recorder_tester.iml" />
       <module fileurl="file://$PROJECT_DIR$/telemetry_recorder_tester/telemetry_recorder_tester.iml" filepath="$PROJECT_DIR$/telemetry_recorder_tester/telemetry_recorder_tester.iml" />
     </modules>
   </component>
