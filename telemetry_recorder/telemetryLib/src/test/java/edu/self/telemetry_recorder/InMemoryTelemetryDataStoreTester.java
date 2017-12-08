@@ -18,7 +18,7 @@ public class InMemoryTelemetryDataStoreTester {
         TelemetryDataStore dataStore = new InMemoryTelemetryDataStore();
         dataStore.saveRegistration(appId, registration);
         String actual = dataStore.getRegistration(appId);
-        assertEquals(registration, "BOGUS");
+        assertEquals(registration, actual);
     }
 
     @Test
