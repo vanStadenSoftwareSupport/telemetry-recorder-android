@@ -5,9 +5,13 @@ package edu.self.telemetry_recorder;
  * @since 8/12/17.
  */
 
-public class TelemetryDataStoreFactory {
+class TelemetryDataStoreFactory {
+    private static TelemetryDataStore sDataStore;
 
-    public static TelemetryDataStore createDataStore() {
-        return  new InMemoryTelemetryDataStore();
+    static TelemetryDataStore createDataStore() {
+        if (sDataStore == null) {
+            sDataStore = new InMemoryTelemetryDataStore();
+        }
+        return  sDataStore;
     }
 }

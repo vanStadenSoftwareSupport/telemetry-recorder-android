@@ -1,2 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.self.telemetry_recorder" />
+    package="edu.self.telemetry_recorder" ><application>
+    <service android:name=".TelemetryService" android:exported="false" />
+</application>
+</manifest>
