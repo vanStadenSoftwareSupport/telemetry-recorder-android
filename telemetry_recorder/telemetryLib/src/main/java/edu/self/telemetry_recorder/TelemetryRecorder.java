@@ -1,6 +1,7 @@
 package edu.self.telemetry_recorder;
 
 import android.content.Context;
+import android.content.Intent;
 
 import java.util.UUID;
 
@@ -45,6 +46,9 @@ public class TelemetryRecorder implements  TelemetryRecorderManager {
             return;
         }
 
+        Intent intent = new Intent(mContext, TelemetryService.class);
+        intent.setAction(TelemetryService.ACTION_START);
+        mContext.startService(intent);
         mDataStore.recordStartState(true);
     }
 
@@ -53,6 +57,9 @@ public class TelemetryRecorder implements  TelemetryRecorderManager {
             return;
         }
 
+        Intent intent = new Intent(mContext, TelemetryService.class);
+        intent.setAction(TelemetryService.ACTION_STOP);
+        mContext.startService(intent);
         mDataStore.recordStartState(false);
     }
 }
