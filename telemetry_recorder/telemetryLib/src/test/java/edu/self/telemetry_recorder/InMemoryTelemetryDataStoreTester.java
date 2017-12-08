@@ -2,8 +2,11 @@ package edu.self.telemetry_recorder;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
 import static junit.framework.Assert.assertTrue;
 
@@ -43,5 +46,17 @@ public class InMemoryTelemetryDataStoreTester {
         dataStore.recordStartState(true);
         boolean actual = dataStore.isStartedStateRecorded();
         assertTrue(actual);
+    }
+
+    @Test
+    public void canSaveAndSelectTrips() {
+        TelemetryDataStore dataStore = new InMemoryTelemetryDataStore();
+        for (int i = 0; i < 10; i++) {
+            dataStore.saveTrip(Trip.fromDatabaseEnry(i, (i + 1) * 60000 + (1512702013),  i * 600000 + 1512702013, i + 1, 60, "Suburb A", "Suburb B"));
+        }
+
+        List<Trip> trips = dataStore.getTrips();
+        assertNotNull(trips);
+        assertEquals(10, trips.size());
     }
 }
